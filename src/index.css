@@ -1,13 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: #050505;
+}
+input[type="search"]::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+}
+.cls-1 {
+  fill: white;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.faded {
+  visibility: visible;
+  scale: 1;
+  transition: isibility 0s 0.5s, scale 0.5s ease-in;
+}
+
+.faded-out {
+  visibility: hidden;
+  scale: 0;
+  transition: visibility 0s 0.5s, scale 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    transform: scale3d(0);
+  }
+  to {
+    transform: scale3d(1);
+  }
+}
+@keyframes animate {
+  from {
+    scale: 0;
+    transform: scale3d();
+  }
+  to {
+    scale: 1;
+  }
+}
+
+.rolling {
+  visibility: visible;
+  animation: rollIn 1s linear;
+}
+
+@keyframes rollIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* .slick-dots li {
+  color: white;
+} */
+.slick-dots li button::before {
+  color: white !important;
+}
+.slick-dots li button::after {
+  color: #121212 !important;
+}
+.slick-prev,
+.slick-next {
+  width: auto;
+}
+.slick-prev::before,
+.slick-next::before {
+  font-size: 30px;
 }
